@@ -1,8 +1,10 @@
 @extends("layouts.user.layout")
+
+@section('header')
+
+@endsection
+
 @section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}">
-
-
 <!-- Home Slider -->
 <section>
     <div class="home">
@@ -17,7 +19,9 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_content text-center">
-                                        <div class="home_logo"><img src="" alt=""></div>
+                                        <div class="home_logo">
+                                            {{-- <img src="" alt=""> --}}
+                                        </div>
                                         <div class="home_text">
                                             <div class="home_title">Online Courses</div>
                                             <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -39,7 +43,9 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_content text-center">
-                                        <div class="home_logo"><img src="" alt=""></div>
+                                        <div class="home_logo">
+                                            {{-- <img src="" alt=""> --}}
+                                        </div>
                                         <div class="home_text">
                                             <div class="home_title">Consulting Team</div>
                                             <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -61,7 +67,9 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_content text-center">
-                                        <div class="home_logo"><img src="" alt=""></div>
+                                        <div class="home_logo">
+                                            {{-- <img src="" alt=""> --}}
+                                        </div>
                                         <div class="home_text">
                                             <div class="home_title">Offline Courses</div>
                                             <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -1392,7 +1400,9 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="home_content text-center">
-                                                    <div class="home_logo"><img src="" alt=""></div>
+                                                    <div class="home_logo">
+                                                        {{-- <img src="" alt=""> --}}
+                                                    </div>
                                                     <div class="home_text">
                                                         <div class="home_title">Kids Courses</div>
                                                         <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -1414,7 +1424,9 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="home_content text-center">
-                                                    <div class="home_logo"><img src="" alt=""></div>
+                                                    <div class="home_logo">
+                                                        {{-- <img src="" alt=""> --}}
+                                                    </div>
                                                     <div class="home_text">
                                                         <div class="home_title">Kids Courses</div>
                                                         <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -1436,7 +1448,9 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="home_content text-center">
-                                                    <div class="home_logo"><img src="" alt=""></div>
+                                                    <div class="home_logo">
+                                                        {{-- <img src="" alt=""> --}}
+                                                    </div>
                                                     <div class="home_text">
                                                         <div class="home_title">Kids Courses</div>
                                                         <div class="home_subtitle">Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.</div>
@@ -1699,11 +1713,9 @@
     </div>
 </div>
 <!-- /Counter -->
-        
 
 @endsection
 
 @section('scripts')
-
 
 @endsection

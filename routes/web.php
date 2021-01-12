@@ -88,15 +88,6 @@ Route::group(
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function(){
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
-   
-
-    Route::get('/Distributor/fromRequest',[DistributorController::class, 'fromRequest'])->name("Distributor.fromRequest"); 
-
-    Route::get('/lookup/getCitiesByCountryId/{countryId}','lookupController@getCitiesByCountryId'); 
-
-    Route::get('/Distributor/getAllDistributorByFilter','DistributorController@getAllDistributorByFilter'); 
-
-    Route::resource('Distributor', DistributorController::class);
 
     Route::get('/index', function () 
      {
