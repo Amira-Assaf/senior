@@ -48,37 +48,12 @@ Route::group(
 ], function(){ 
 
  /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    
-    //  ---------------------------Distruboter User Design
-    //  Route::get('/Distributor/fromRequest',[DistributorController::class, 'fromRequest'])->name("Distributor.fromRequest"); 
-    //  Route::get('/lookup/getCitiesByCountryId/{countryId}','lookupController@getCitiesByCountryId'); 
-    //  Route::get('/Distributor/getAllDistributorByFilter','DistributorController@getAllDistributorByFilter'); 
-    //  Route::resource('Distributor', DistributorController::class);
 
-    //-------------------------Admin Distributor
-     Route::resource('adminDistributor', 'adminDistributorController');
-     Route::resource('RequestDistributor', 'RequestDistributorController');
-     Route::resource('/admin/distributors', adminDistributorController::class);
-    
-     Route::resource('captionDistributor', 'captionDistributorController');
 
-     Route::get('admin/edit-distributor', function () 
-     {
-            return view('admin.edit-distributor');
-     });
+    //-------------------------Admin Routes
 
-    //-------------------------Users Routes
+    //-------------------------Users Screen
      Route::resource('/AdminUser', UserController::class);
-     Route::get('/user', function () 
-     {
-        return view('admin.user.index');
-     });
-
-     Route::get('/caption', function () 
-     {
-        return view('user.caption-distributors');
-     });
-
 
 });
 

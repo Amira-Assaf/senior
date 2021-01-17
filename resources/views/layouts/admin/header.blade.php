@@ -1,123 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="icon" href="{{asset('asset/img/logo1.png')}}" type="image/x-icon" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		
-		@if (app()->getLocale()=='en')
-		<title>Ultimatrue</title>
-        @else
-		<title>التيماترو</title>
-        @endif
+<!doctype html>
+<html class="no-js" lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    @if (app()->getLocale()=='en')
+    <title>EN Senior</title>
         
-        <link href="{{ asset('asset/styles/bootstrap-4.1.2/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('asset/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
-        
-      
-        <link href="{{ asset('asset/plugins/colorbox/colorbox.css') }}" rel="stylesheet">
-        
-        
-        <link href="{{ asset('asset/styles/about.css') }}" rel="stylesheet">
-        <link href="{{ asset('asset/styles/about_responsive.css') }}" rel="stylesheet">
-		
-		<!-- select2 CSS
+    @else
+    <title>AR Senior</title>
+    @endif
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS 
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/bootstrap.min.css') }}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome.min.css') }}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/owl.transitions.css') }}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/animate.css') }}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/normalize.css') }}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/meanmenu.min.css') }}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/main.css') }}">
+    <!-- educate icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/educate-custon-icon.css') }}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/morrisjs/morris.css') }}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/metisMenu/metisMenu.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/metisMenu/metisMenu-vertical.css') }}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/calendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/calendar/fullcalendar.print.min.css') }}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/form/all-type-forms.css') }}">
+	<!-- select2 CSS
+		============================================ -->
+	<link rel="stylesheet" href="{{ asset('dashboard/css/select2/select2.min.css') }}">
+	<!-- chosen CSS
+		============================================ -->
+	<link rel="stylesheet" href="{{ asset('dashboard/css/chosen/bootstrap-chosen.css') }}">
+	<!-- modals CSS
+		============================================ -->
+		<link rel="stylesheet" href="{{ asset('dashboard/css/modals.css') }}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/style.css') }}">
+    <!-- responsive CSS
+		============================================ -->
+	<link rel="stylesheet" href="{{ asset('dashboard/css/responsive.css') }}">
+	 <!-- Custom CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/custom.css') }}">
+    
+ <!-- select2 CSS
 		============================================ -->
 		<link rel="stylesheet" href="{{ asset('dashboard/css/select2/select2.min.css') }}">
 		<!-- chosen CSS
 			============================================ -->
 		<link rel="stylesheet" href="{{ asset('dashboard/css/chosen/bootstrap-chosen.css') }}">
-		
-		<!-- notifications CSS
+    
+    <!-- notifications CSS
 		============================================ -->
-		<link rel="stylesheet" href="{{ asset('dashboard/css/notifications/Lobibox.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('dashboard/css/notifications/notifications.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/notifications/Lobibox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/notifications/notifications.css') }}">
 
-		<!-- educate icon CSS
+    <!-- DataTable CSS
 		============================================ -->
-		<link rel="stylesheet" href="{{ asset('dashboard/css/educate-custon-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/data-table/bootstrap-table.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/data-table/bootstrap-editable.css') }}">
 
-	</head>
-    <body>
-		<div class="super_container">
-
-		<!--================ Header En / Ar =================-->
-        <header class="header trans_400">	
-				<!-- Logo -->
-				<div class="logo">
-					<a href="#"><img src="{{asset('asset/img/logo1.png')}}" alt=""></a>
-				</div>	
-				<div class="container">
-					<div class="row" @if (app()->getLocale()=='ar') style="direction: rtl" @endif >
-						<div class="col">
-							<div  @if (app()->getLocale()=='ar') class="header_content d-flex flex-row align-items-center justify-content-center trans_400" @else class="header_content d-flex flex-row align-items-center justify-content-start trans_400"   @endif>
-								<nav class="main_nav">
-									<ul class="d-flex flex-row align-items-start justify-content-start">
-										
-						
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-					<!-- Submit & Social -->
-				<div class="header_right d-flex flex-row align-items-start justify-content-start">
-	
-						<!-- Submit -->
-						<div class="submit"><a href="#join-distributors"></a></div>
-		
-						<!-- Social -->
-						<div class="social">
-							<ul class="d-flex flex-row align-items-start justify-content-start">
-								
-							</ul>
-						</div>
-
-						<!-- Hamburger -->
-						<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-				</div>
-		</header>
-		<!--================ /Header En / Ar =================-->
-
-<br />
-
-		@yield('content')
-	</div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="{{ asset('asset/js/jquery-3.3.1.min.js') }}"></script>
-		<script src="{{ asset('asset/styles/bootstrap-4.1.2/popper.js') }}"></script>
-		<script src="{{ asset('asset/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/greensock/TweenMax.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/greensock/TimelineMax.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/greensock/animation.gsap.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/colorbox/jquery.colorbox-min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/easing/easing.js') }}"></script>
-		<script src="{{ asset('asset/plugins/progressbar/progressbar.min.js') }}"></script>
-		<script src="{{ asset('asset/plugins/parallax-js-master/parallax.min.js') }}"></script>
-		<script src="{{ asset('asset/js/about.js') }}"></script>
-
-<!-- chosen JS
+    <!-- Noty (Notification)
 		============================================ -->
-		<script src="{{ asset('dashboard/js/chosen/chosen.jquery.js') }}"></script>
-		<script src="{{ asset('dashboard/js/chosen/chosen-active.js') }}"></script>
-		<!-- select2 JS
-			============================================ -->
-		<script src="{{ asset('dashboard/js/select2/select2.full.min.js') }}"></script>
-		<script src="{{ asset('dashboard/js/select2/select2-active.js') }}"></script>
-
-		<!-- notification JS
+    <link href="{{ asset('dashboard/css/noty/noty.css') }}" rel="stylesheet" >
+    <script src="{{ asset('dashboard/css/noty/noty.min.js') }}"></script>
+    <!-- modernizr JS
 		============================================ -->
-		<script src="{{ asset('dashboard/js/notifications/Lobibox.js') }}"></script>
-		<script src="{{ asset('dashboard/js/notifications/notification-active.js') }}"></script>
-
-
-		@yield('scripts')
-		
-    </body>
-</html>
+    <script src="{{ asset('dashboard/js/vendor/modernizr-2.8.3.min.js') }}"></script>
