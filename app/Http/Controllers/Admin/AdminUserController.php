@@ -1,21 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+
 use \App\Models\User;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB; 
-class UserController extends Controller
+
+class AdminUserController extends Controller
 {
     public function __construct()
     {
         // create read update delete
-        $this->middleware(['permission:users-read'])->only('index');
-        $this->middleware(['permission:users-create'])->only('create');
-        $this->middleware(['permission:users-update'])->only('edit');
-        $this->middleware(['permission:users-delete'])->only('destroy');
+        // $this->middleware(['permission:users-read'])->only('index');
+        // $this->middleware(['permission:users-create'])->only('create');
+        // $this->middleware(['permission:users-update'])->only('edit');
+        // $this->middleware(['permission:users-delete'])->only('destroy');
+        $this->middleware('auth');
 
     }//end of constructor
 
@@ -28,8 +33,9 @@ class UserController extends Controller
     {
         //
         // $user = User::all();
-        $user = User::whereRoleIs('admin')->get();
-        return view("admin.user.index")->with("user",$user);
+        // $user = User::whereRoleIs('admin')->get();
+        // return view("admin.user.index")->with("user",$user);
+        return view('user.index');
     }
 
     /**

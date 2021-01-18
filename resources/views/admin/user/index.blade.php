@@ -1,4 +1,4 @@
-@extends("layouts.admin.layout")
+@extends('layouts.admin.layout')
 @section('admin-content')
 
 <div class="breadcome-area">

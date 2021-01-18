@@ -64,10 +64,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
 
-    Route::get('/index', function () 
-     {
-        return view('user.index');
-     });
+   
 
      Route::get('/about', function () 
      {
@@ -79,5 +76,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         return view('user.all_courses');
      });
 
+     
 
 });
