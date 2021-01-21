@@ -53,7 +53,7 @@ Route::group(
     //-------------------------Admin Routes
 
     //-------------------------Users Screen
-     Route::resource('/AdminUser', UserController::class);
+    //  Route::resource('/AdminUser', UserController::class);
 
 });
 

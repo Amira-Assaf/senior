@@ -78,11 +78,11 @@
                                             <td>{{ $user->email }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
                                             <td>
-                                                {{-- @if (Auth::user()->hasPermission('users-update'))
+                                                @if (Auth::user()->hasPermission('users-update'))
                                                     <a href="/AdminUser/{{$user->id}}/edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('site.edit')</a>
                                                 @else
                                                     <a href="" class="btn btn-info btn-sm" disabled><i class="fa fa-edit"></i>@lang('site.edit')</a>
-                                               @endif --}}
+                                               @endif
                                                 @if (Auth::user()->hasPermission('users-delete'))
                                                     <form action="{{ route('AdminUser.destroy',$user->id) }}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}

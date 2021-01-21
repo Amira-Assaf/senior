@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::resource('/Admin-User', AdminUserController::class);
+Route::resource('/AdminUser', AdminUserController::class);
 // Route::get('/Admin-User','AdminUserController@index')->name('Admin-User');
-Route::namespace('Admin')->group(function () {
+// Route::namespace('Admin')->group(function () {
 
 
 
@@ -21,4 +21,3 @@ Route::namespace('Admin')->group(function () {
   
   
 
-});

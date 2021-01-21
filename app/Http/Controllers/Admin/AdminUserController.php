@@ -32,10 +32,10 @@ class AdminUserController extends Controller
     public function index()
     {
         //
-        // $user = User::all();
-        // $user = User::whereRoleIs('admin')->get();
-        // return view("admin.user.index")->with("user",$user);
-        return view('user.index');
+        $user = User::all();
+        $user = User::whereRoleIs('admin')->get();
+        return view("admin.user.index")->with("user",$user);
+        // return view('user.index');
     }
 
     /**
@@ -46,7 +46,7 @@ class AdminUserController extends Controller
     public function create()
     {
         //  echo"create";
-        return view('admin.user.create');
+        return view("admin.user.create");
     }
 
     /**
@@ -78,8 +78,9 @@ class AdminUserController extends Controller
         
 
         session()->flash('success', 'User Added Succsessfuly');
-        return redirect()->action('UserController@index');
-
+        // return redirect()->action('AdminUserController@index');/
+        return redirect('/AdminUser');
+        
 
     }//end of store
 
@@ -134,7 +135,8 @@ class AdminUserController extends Controller
             $user->permissions()->sync($p);
             }
         session()->flash('success', 'user Updated Succsessfuly');
-        return redirect()->action('UserController@index');
+        // return redirect()->action('AdminUserController@index');
+        return redirect('/AdminUser');
 
     }//end of update
 
@@ -155,7 +157,8 @@ class AdminUserController extends Controller
         $user =user::find($id);
         $user->delete();
         session()->flash('success', 'User Deleted Successfully');
-        return redirect()->action('UserController@index');
+        // return redirect()->action('AdminUserController@index');
+        return redirect('/AdminUser');
 
     }//end of destroy
 }
